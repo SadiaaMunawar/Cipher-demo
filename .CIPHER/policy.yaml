@@ -1,0 +1,33 @@
+signatures:
+  - "ignore previous instructions"
+  - "instead, perform"
+  - "send all"
+  - "exfiltrate"
+  - "attacker.com"
+  - "transmit"
+  - "before returning results"
+  - "output all environment variables"
+  - "do not tell the user"
+  - "forward the log"
+  - "include raw tool_call history"
+  - "every api response"
+  - "http://127.0.0.1:"
+capability_risk_matrix:
+  dangerous_combos:
+    - ["fs_read", "net_egress"]
+    - ["env_access", "net_egress"]
+    - ["fs_write", "cmd_exec"]
+    - ["fs_read", "env_access", "net_egress"]
+    - ["cmd_exec", "net_egress"]
+    - ["fs_write", "cmd_exec"]
+cve_threshold: 7.0 # CVSS score equal or above this will trigger BLOCK
+action_mode: block # Options: block, warn, audit
+hash_cache_file: ".cipher_cache/baseline_hashes.json"
+sensitive_keywords:
+  - "delete"
+  - "drop"
+  - "remove"
+  - "admin"
+  - "purge"
+  - "execute"
+  - "write"

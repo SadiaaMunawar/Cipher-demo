@@ -1,0 +1,11 @@
+{
+  "name": "test-mcp-server",
+  "version": "1.0.0",
+  "description": "Vulnerable target package to test CVE scanner check",
+  "dependencies": {
+    "axios": "0.21.1",
+    "lodash": "4.17.20",
+    "express": "4.17.1",
+    "node-fetch": "2.6.1"
+  }
+}
